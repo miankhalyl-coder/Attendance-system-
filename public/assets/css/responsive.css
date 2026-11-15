@@ -1,0 +1,41 @@
+/* Mobile first: phones are the base; these tune tablets/desktop and the smallest phones. */
+
+/* Phones: nav becomes a fixed bottom tab bar like a native app */
+@media (max-width: 767.98px) {
+  .app-nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 35; border-top: 1px solid #e4eaf3; border-bottom: 0; padding-bottom: env(safe-area-inset-bottom); }
+  .nav-inner { justify-content: space-around; gap: 0; overflow: visible; padding-left: 4px; padding-right: 4px; }
+  .nav-link-app { flex-direction: column; gap: 0; padding: 6px 2px; font-size: .68rem; flex: 1 1 0; min-width: 0; text-align: center; justify-content: center; }
+  .nav-link-app i { font-size: 1.25rem; }
+  .page { padding-bottom: 96px; }
+  .save-bar { bottom: calc(58px + env(safe-area-inset-bottom)); padding-bottom: 10px; }
+  .save-spacer { height: 150px; }
+  /* tables become stacked cards */
+  .table-stack thead { display: none; }
+  .table-stack, .table-stack tbody, .table-stack tr, .table-stack td { display: block; width: 100%; }
+  .table-stack tr { padding: 10px 14px; border-bottom: 1px solid #eef2f8; }
+  .table-stack td { border: 0; padding: 3px 0 !important; display: flex; justify-content: space-between; align-items: center; gap: 10px; text-align: right; }
+  .table-stack td::before { content: attr(data-label); color: var(--muted); font-size: .8rem; font-weight: 600; text-align: left; }
+  .table-stack td.actions { justify-content: flex-end; padding-top: 8px !important; }
+  .table-stack td.actions::before { content: none; }
+}
+
+/* Very small phones (360px) */
+@media (max-width: 389.98px) {
+  .seg-btn { min-width: 66px; font-size: .82rem; padding: 0 6px; }
+  .att-row { gap: 8px; padding: 10px; }
+  .att-roll { width: 26px; }
+  .stat-val { font-size: 1.4rem; }
+  .btn-lg { padding-left: .9rem; padding-right: .9rem; }
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .page { padding-top: 28px; }
+  .save-bar { left: 50%; transform: translateX(-50%); width: min(1080px, 100%); border-radius: 16px 16px 0 0; }
+  .app-header .container-app, .app-nav .container-app { padding: 0 24px; }
+  .container-app { padding: 0 24px; }
+}
+@media (min-width: 992px) {
+  .stat-val { font-size: 1.9rem; }
+  .att-row { padding: 12px 20px; }
+}

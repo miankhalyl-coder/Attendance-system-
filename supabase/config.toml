@@ -1,0 +1,13 @@
+# Minimal Supabase CLI config. Link your project with: supabase link --project-ref <ref>
+project_id = "gps-kotli-ghasi"
+
+[auth]
+enable_signup = false              # no public registration
+enable_anonymous_sign_ins = false
+
+[auth.email]
+enable_signup = false
+enable_confirmations = false
+
+[functions.admin-users]
+verify_jwt = true
